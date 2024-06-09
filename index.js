@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(express.static(process.env.STATIC_DIR));
 app.get("/", (req, res) => {
-    const path = resolve(process.env.STATIC_DIR + "/index.html");
+    res.status(200).send(`Server is healthy and running!`);
 });
 app.get("/config", (req, res) => {
     res.send({
